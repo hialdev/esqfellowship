@@ -8,6 +8,25 @@ $md: 992px;
 $lg: 1200px;
 
 // Utils
+/* scrollbars */
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #111720; 
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(117.08deg, #E8C341 29.98%, #915700 79.27%);  
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(117.08deg, #E8C341 29.98%, #915700 79.27%); 
+}
 
 /* Extra small devices (phone) */
 @media (max-width: $xs) {
@@ -101,6 +120,9 @@ h1,h2,h3{
         line-height: 100px;
     }
 }
+.text-blue{
+    color: #0000FE;
+}
 .text-gold{
     background: linear-gradient(117.08deg, #E8C341 29.98%, #915700 79.27%);
     -webkit-background-clip: text;
@@ -124,18 +146,40 @@ h1,h2,h3{
 // ----------------------------------
 // ---------- Components ------------
 // ----------------------------------
+.bg-dark .menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .menu-toggle span{
+        background-color: #fff;
+    }
+
+    @media (max-width: $sm) {
+        .menu-list{
+           background-color: #111720;
+        }        
+    }
+}
 
 .menu{
     gap: 3em !important;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+
     .menu-list{
         display: flex;
         align-items: center;
         gap: 2.8em;
     }
+    
     &-item{
         text-decoration: none;
         color: inherit;
-        &:hover{
+        &:hover,&.active{
+            font-weight: 600;
             background: linear-gradient(117.08deg, #E8C341 29.98%, #e48b06 79.27%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -156,6 +200,7 @@ h1,h2,h3{
         position: fixed;
         top: 0;
         right: 0;
+        z-index: 2;
     }
     .menu-toggle .check{
         position: absolute;
@@ -180,7 +225,7 @@ h1,h2,h3{
     }
     .menu-toggle span{
         height: 3px;
-        background-color: #fff;
+        background-color: #111720;
         border-radius: 25px;
         transition: all 0.3s ease-in-out;
     }
@@ -209,9 +254,10 @@ h1,h2,h3{
             flex-direction: column;
             padding: 1.4em;
             padding-top: 6em;
-            background-color: #111720;
+            background-color: #f8f8f8;
             transform: translateX(+100%);
             transition: all 0.4s ease;
+            z-index: 1;
             &.active{
                 transform: translateX(0);
                 transition: all 0.4s ease;
@@ -375,6 +421,29 @@ h1,h2,h3{
         height: 24em;
     }
 }
+
+// ---------- About -----------
+.about-switch{
+    .switcher{
+        border-radius: 25px;
+        overflow: hidden;
+        max-height: 15em;
+        transition: all 0.4s ease;
+        &:first-child{
+            transition: all 0.4s ease;
+            width: 60%;
+        }
+        &:last-child{
+            transition: all 0.4s ease;
+            width: 40%;
+            &:hover{
+                transition: all 0.4s ease;
+                width: 60%;
+            }
+        }
+    }
+}
+
 // ----------------------------------
 // ---------- Carousel ------------
 // ----------------------------------

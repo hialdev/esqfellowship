@@ -43,6 +43,11 @@
   color: white;
 }
 
+.bg-gold {
+  background: linear-gradient(123deg, #CCA730 0%, #DEB73A 0.01%, #EEA700 25.05%, #FFD273 51.79%, #FFA900 68.74%, #935A02 100%) !important;
+  color: white;
+}
+
 main {
   overflow-x: hidden !important;
 }
@@ -399,6 +404,22 @@ h1, h2, h3 {
 .about-switch .switcher:last-child:hover {
   transition: all 0.4s ease;
   width: 60%;
+}
+
+.heroes-page .hero-item {
+  color: white;
+}
+.heroes-page .hero-item img {
+  filter: grayscale(100);
+}
+.heroes-page .hero-item .hero-content {
+  background: rgba(217, 217, 217, 0.1);
+  box-shadow: -17.4333324432px 17.4333324432px 17.4333324432px 0px rgba(255, 255, 255, 0.1) inset, 17.4333324432px -17.4333324432px 17.4333324432px 0px rgba(165, 165, 165, 0.1) inset;
+  -webkit-backdrop-filter: blur(10.4600000381px);
+          backdrop-filter: blur(10.4600000381px);
+}
+.heroes-page .hero-item:hover img {
+  filter: grayscale(0);
 }
 
 .owl-carousel.hero-carousel .owl-stage-outer {

@@ -58,6 +58,10 @@ $lg: 1200px;
     background-color: #111720 !important;
     color: white;
 }
+.bg-gold{
+    background: linear-gradient(123deg, #CCA730 0%, #DEB73A 0.01%, #EEA700 25.05%, #FFD273 51.79%, #FFA900 68.74%, #935A02 100%) !important;
+    color: white;
+}
 main{
     overflow-x: hidden !important;
 }
@@ -444,6 +448,25 @@ h1,h2,h3{
     }
 }
 
+// ----------- Heroes Page ----------
+.heroes-page{
+    .hero-item {
+        color: white;
+        img{
+            filter: grayscale(100);
+           
+        }
+        .hero-content{
+            background: rgba(217, 217, 217, 0.10);
+            box-shadow: -17.433332443237305px 17.433332443237305px 17.433332443237305px 0px rgba(255, 255, 255, 0.10) inset, 17.433332443237305px -17.433332443237305px 17.433332443237305px 0px rgba(165, 165, 165, 0.10) inset;
+            backdrop-filter: blur(10.460000038146973px);
+        }
+
+        &:hover img{
+            filter: grayscale(0);
+        }
+    }
+}
 // ----------------------------------
 // ---------- Carousel ------------
 // ----------------------------------

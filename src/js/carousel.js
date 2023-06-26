@@ -43,3 +43,22 @@ $('.awardee-carousel').owlCarousel({
         }
     }
 });
+$('.awardee-item-carousel').owlCarousel({
+    items:2,
+    loop:false,
+    margin:10,
+    responsive:{
+        300:{
+            items:1
+        },
+        500:{
+            items:2
+        },
+        800:{
+            items:3
+        },
+        1000:{
+            items:4
+        }
+    }
+});

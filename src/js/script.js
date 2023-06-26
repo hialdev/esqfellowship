@@ -12,15 +12,23 @@ humburger.on('click',function(){
 // Modal About
 $('#contribute-modal').hide();
 $('#benefit-modal').hide();
+$('#contact-modal').hide();
+
+$('#contribute').on('click', function () {
+    $('#contribute-modal').show();
+})
 $('#close-modal').click(function(){
     $('#contribute-modal').hide();
 })
 $('#benefit-close-modal').click(function(){
     $('#benefit-modal').hide();
 })
-$('#contribute').on('click', function () {
-    $('#contribute-modal').show();
-})
 $('#benefit').on('click', function () {
     $('#benefit-modal').show();
+})
+$('#contact').on('click', function () {
+    $('#contact-modal').show();
+})
+$('#contact-close-modal').click(function(){
+    $('#contact-modal').hide();
 })

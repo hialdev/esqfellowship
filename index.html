@@ -28,7 +28,7 @@
                 <a href="./about.html" class="menu-item">About</a>
                 <a href="./heroes.html" class="menu-item">Our Heroes</a>
                 <a href="./awardee.html" class="menu-item">Awardee</a>
-                <a href="./contact.html" class="menu-item">Contact</a>
+                <a href="./index.html#sosmed" class="menu-item">Social Media</a>
             </div>
             <div class="menu-toggle ms-auto">
                 <input type="checkbox" name="" class="check">
@@ -39,6 +39,73 @@
         </nav>
     </header>
     <main>
+        <!-- Modal contact -->
+        <div id="contact-modal" class="position-fixed top-0 w-100 end-0 h-100 start-0 p-4 bg-white" style="z-index: 101; overflow-x: hidden; overflow-y: auto;">
+            <div class="position-fixed top-0 end-0">
+                <div id="contact-close-modal" class="p-3 d-flex align-items-center justify-content-center" style="cursor: pointer;">
+                    <span class="iconify" data-icon="ci:close-md" style="width: 3em; height: 3em;"></span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="">
+                    <h3 class="text-semibig text-upppercase">Contact Us</h3>
+                    <div class="rounded-4 bg-light overflow-hidden bg-secondary">
+                        <div class="d-flex align-items-center gap-3 p-3 bg-gold">
+                            <img src="./src/images/person.png" alt="Admin Contact" class="rounded-circle" style="width: 4em; height: 4em; object-fit: cover;">
+                            <div>
+                                <div class="fw-bold fs-5 text-white">Admin Fellowship</div>
+                                <p class="mb-0 text-white fst-italic fs-6">biasa membalas dalam < 1jam</p>
+                            </div>
+                        </div>
+                        <div class="p-3 d-flex flex-column justify-content-end pt-5 mt-5" style="min-height: 20em;">
+                            <div class="d-flex flex-column align-items-start gap-3">
+                                <div class="speech-bubble p-3 d-inline-block">
+                                    <div>Hallo! selamat datang di admin fellowship :D</div>
+                                </div>
+                                <div class="speech-bubble p-3 d-inline-block">
+                                    <div>Kamu mau tanya apa nih?</div>
+                                </div>
+                                <div class="speech-bubble p-3 d-inline-block">
+                                    <div>jangan lupa isi datanya dengan benar yah.. terus tulis pesannya lalu kirim deh!</div>
+                                </div>
+                                <form action="" class="d-flex flex-column w-100 align-items-start gap-3">
+                                    <div class="speech-bubble p-3 d-inline-block">
+                                        <div>Siapa nama lengkap kamu nih?</div>
+                                        <div><input type="text" placeholder="Nama Kamu" class="form-control w-100 my-2"></div>
+                                    </div>
+                                    <div class="speech-bubble p-3 d-inline-block">
+                                        <div>Alamat Email kamu apa?</div>
+                                        <div><input type="email" placeholder="" class="form-control w-100 my-2"></div>
+                                    </div>
+                                    <div class="speech-bubble p-3 d-inline-block">
+                                        <div>kalau No hp / whatsapp kamu ? tenang ini hanya untuk menghubungimu</div>
+                                        <div><input type="number" placeholder="" class="form-control w-100 my-2"></div>
+                                    </div>
+                                    <div class="w-100 d-flex align-items-center rounded-4 p-3 gap-3 bg-gold">
+                                        <div class="d-inline-block w-100">
+                                            <div>
+                                                <textarea name="" id="" cols="30" rows="10" placeholder="Tulis pesan kamu..." class="form-control border-0"></textarea>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn d-flex align-items-center justify-content-center text-white">
+                                            <span class="iconify" data-icon="file-icons:telegram" style="width: 3em;height: 3em;"></span>
+                                        </button>
+                                    </div>
+                                </form>
+                                
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact" class="d-inline-block position-fixed bottom-0 end-0 m-3" style="z-index: 100;cursor:pointer;">
+            <div class="d-inline-flex justify-content-center align-items-center p-2 bg-gold rounded-circle">
+                <span class="iconify text-white" data-icon="fluent:chat-32-filled" style="width: 2.5em; height: 2.5em;"></span>
+            </div>
+        </div>
+        
         <section class="position-relative mb-5" style="height: 80vh !important;">
             <div class="owl-carousel owl-theme hero-carousel">
                 <img src="./src/images/hero.png" alt="Hero Image" class="w-100 object-fit-cover" style="height: 80vh !important;object-fit: cover;">
@@ -194,9 +261,14 @@
             </div>
         </section>
 
-        <section class="sosmed my-5 sec-pad">
+        <section class="sosmed my-5 sec-pad" id="sosmed">
             <h2 class="text-center text-gold text-semibig">Social Media</h2>
-            <div class="container">
+            <div class="container position-relative">
+                <div class="d-flex w-100 align-items-center justify-content-between position-absolute top-0 start-0 end-0 h-100">
+                    <div class="d-flex align-items-center justify-content-center p-2 rounded-circle">
+                        <span class="iconify" data-icon="tabler:arrow-left" style="width: 2.3em; height: 2.3em;"></span>
+                    </div>
+                </div>
                 <div class="owl-carousel owl-theme sosmed-carousel">
                     <div class="w-100">
                         <a href="#" class="d-flex align-items-center justify-content-between gap-3 text-decoration-none text-white mb-4">

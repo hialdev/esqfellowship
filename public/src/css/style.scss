@@ -57,6 +57,9 @@ $lg: 1200px;
 .bg-dark{
     background-color: #111720 !important;
     color: white;
+    &:hover{
+        color: white !important;
+    }
 }
 .bg-gold{
     background: linear-gradient(123deg, #CCA730 0%, #DEB73A 0.01%, #EEA700 25.05%, #FFD273 51.79%, #FFA900 68.74%, #935A02 100%) !important;

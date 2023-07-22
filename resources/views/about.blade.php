@@ -53,14 +53,14 @@
 </section>
 
 <!-- Modal Contribute -->
-<div id="contribute-modal" class="position-fixed top-0 w-100 end-0 h-100 start-0 p-4 bg-white" style="z-index: 10; overflow-x: hidden; overflow-y: auto;">
-    <div class="position-fixed top-0 end-0">
+<div id="contribute-modal" class="position-fixed top-0 w-100 end-0 h-100 start-0 p-4 bg-white" style="z-index: 100; overflow-x: hidden; overflow-y: auto;">
+    <div class="position-fixed top-0 start-0" style="z-index:10">
         <div id="close-modal" class="p-3 d-flex align-items-center justify-content-center" style="cursor: pointer;">
-            <span class="iconify" data-icon="ci:close-md" style="width: 3em; height: 3em;"></span>
+            <span class="iconify" data-icon="mingcute:back-fill" style="width: 3em; height: 3em;"></span>
         </div>
     </div>
     <div class="container">
-        <div class="">
+        <div class="py-5">
             <h1 class="text-semibig text-blue text-upppercase">Contribute</h1>
             <div class="row align-items-center">
                 <div data-aos="fade-right" data-aos-duration="1000" class="col-12 col-md-6">
@@ -72,17 +72,22 @@
             </div>
         </div>
     </div>
+    <div class="position-fixed bottom-0 w-100 end-0 start-0 p-4">
+        <div class="container">
+            <a href="https://wa.me/{{setting('contact.wa')}}?text=Hi+ESQ+Fellowship+Saya+ingin+berkontribusi" class="btn bg-dark p-3 rounded-4 d-inline-flex items-center gap-3">Saya ingin berkontribusi <div><span class="iconify text-yellow" style="width: 1em; height: 1em;" data-icon="icon-park-solid:right-c"></span></div></a>
+        </div>
+    </div>
 </div>
 
 <!-- Modal Benefit -->
-<div id="benefit-modal" class="position-fixed top-0 w-100 end-0 h-100 start-0 p-4 bg-white" style="z-index: 10; overflow-x: hidden; overflow-y: auto;">
-    <div class="position-fixed top-0 end-0">
+<div id="benefit-modal" class="position-fixed top-0 w-100 end-0 h-100 start-0 p-4 bg-white" style="z-index: 100; overflow-x: hidden; overflow-y: auto;">
+    <div class="position-fixed top-0 start-0" style="z-index:10">
         <div id="benefit-close-modal" class="p-3 d-flex align-items-center justify-content-center" style="cursor: pointer;">
-            <span class="iconify" data-icon="ci:close-md" style="width: 3em; height: 3em;"></span>
+            <span class="iconify" data-icon="mingcute:back-fill" style="width: 3em; height: 3em;"></span>
         </div>
     </div>
     <div class="container">
-        <div class="">
+        <div class="py-5">
             <h1 class="text-semibig text-blue text-upppercase">The Benefit</h1>
             <div class="row align-items-center">
                 <div data-aos="fade-right" data-aos-duration="1000" class="col-12 col-md-6">
@@ -92,6 +97,11 @@
                     <img data-aos="fade-down" data-aos-duration="1000" src="{{Voyager::image(setting('about.benefit_image'))}}" alt="Person Image" class="w-100">
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="position-fixed bottom-0 w-100 end-0 start-0 p-4">
+        <div class="container">
+            <a href="https://wa.me/{{setting('contact.wa')}}?text=Hi+ESQ+Fellowship+Saya+ingin+berkontribusi" class="btn bg-dark p-3 rounded-4 d-inline-flex items-center gap-3">Saya ingin berkontribusi <div><span class="iconify text-yellow" style="width: 1em; height: 1em;" data-icon="icon-park-solid:right-c"></span></div></a>
         </div>
     </div>
 </div>

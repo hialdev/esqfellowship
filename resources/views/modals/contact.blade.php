@@ -10,7 +10,7 @@
             <h3 class="text-semibig text-upppercase">Contact Us</h3>
             <div class="rounded-4 bg-light overflow-hidden bg-secondary">
                 <div class="d-flex align-items-center gap-3 p-3 bg-gold">
-                    <img src="/src/images/person.png" alt="Admin Contact" class="rounded-circle" style="width: 4em; height: 4em; object-fit: cover;">
+                    <img src="{{Voyager::image(setting('site.logo'))}}" alt="Admin Contact" class="rounded-circle" style="width: 4em; height: 4em; object-fit: cover;">
                     <div>
                         <div class="fw-bold fs-5 text-white">Admin Fellowship</div>
                         <p class="mb-0 text-white fst-italic fs-6">biasa membalas dalam < 1jam</p>

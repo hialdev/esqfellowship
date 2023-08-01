@@ -52,7 +52,7 @@
                 @if (count($heroes) > 4 )
                 <div class="col-10 mx-auto">
                     <div data-aos="fade-up" data-aos-duration="1000" class="d-flex align-items-end justify-content-end">
-                        <a href="./heroes.html" class="d-flex align-items-center justify-content-center circle-more text-decoration-none">
+                        <a href="{{route('heroes')}}" class="d-flex align-items-center justify-content-center circle-more text-decoration-none">
                             See All Heroes
                         </a>
                     </div>
@@ -83,7 +83,7 @@
                 </div>
                 @endforeach
                 <div>
-                    <a href="./awardee.html" class="awardee-item d-block position-relative">
+                    <a href="{{route('awardee')}}" class="awardee-item d-block position-relative">
                         <img src="/src/images/awardee-more.png" alt="Awardee">
                     </a>
                 </div>

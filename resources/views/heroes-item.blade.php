@@ -10,9 +10,11 @@
             <div class="col-12 my-5">
                 <p class="fw-bold bg-gold text-white p-3 px-4 d-inline-block rounded-pill">THE HERO</p>
                 <h1 class="text-semibig text-gold mb-0">{{$hero->name}}</h1>
+                @if (isset($hero->job) && isset($hero->instansi))
                 <h4 class="fs-4 fw-bold" style="margin-top: -3%;">
                     {{$hero->job}} of {{$hero->instansi}}
                 </h4>
+                @endif
             </div>
             <div class="col-12 col-md-6">
                 <div>

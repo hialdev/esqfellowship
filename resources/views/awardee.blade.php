@@ -16,8 +16,8 @@
                     <div class="p-4 position-absolute bottom-0 end-0 start-0 hero-content">
                         <div class="d-flex align-items-center mb-2 gap-2 rounded-pill p-2 bg-gold" title="The Hero">
                             <div class="d-flex align-items-center gap-2">
-                                <img src="./src/images/person.png" alt="Heroes" style="width: 2em; height:2em; object-fit:cover; border-radius:50px">
-                                <h6 class="m-0 p-0 text-white">{{$award->name}}</h6>
+                                <img src="{{Voyager::image($award->hero->image)}}" alt="Heroes" style="width: 2em; height:2em; object-fit:cover; border-radius:50px">
+                                <h6 class="m-0 p-0 text-white">{{$award->hero->name}}</h6>
                             </div>
                         </div>
                         <h4 class="lc lc-2">{{$award->name}}</h4>

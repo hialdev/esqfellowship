@@ -37,23 +37,23 @@
 
     <section class="our-hero sec-pad">
         <div class="container">
-            <h2 class="text-gold text-semibig d-inline-block">Our Heroes</h2>
+            <h2 class="text-gold text-semibig d-inline-block">Our Fellows</h2>
             <div class="row">
                 @foreach ($heroes as $hero)
                 <div data-aos="zoom-out-up" data-aos-duration="1000" class="col-10 mx-auto hero-card">
                     <a href="{{route('heroes.item',$hero->slug)}}" class="text-decoration-none text-white hero-item">
-                        <h3 class="text-white fs-1 text-wrap">{{$hero->name}}</h3>
-                        <img src="{{Voyager::image($hero->image)}}" alt="Heroes" class="rounded-sm" style="min-height: 18em; min-width:10em; object-fit:cover">
+                        <h3 class="text-white fs-1 text-wrap lc lc-2">{{$hero->name}}</h3>
+                        <img src="{{Voyager::image($hero->image)}}" alt="Fellows {{$hero->name}}" class="rounded-4 border border-2 border-warning" style="min-height: 18em; min-width:18em; object-fit:cover">
                     </a>
                 </div>
                 @endforeach
                 
                 <!-- More -->
-                @if (count($heroes) > 4 )
+                @if (count($heroes) == 4 )
                 <div class="col-10 mx-auto">
                     <div data-aos="fade-up" data-aos-duration="1000" class="d-flex align-items-end justify-content-end">
                         <a href="{{route('heroes')}}" class="d-flex align-items-center justify-content-center circle-more text-decoration-none">
-                            See All Heroes
+                            See All Fellows
                         </a>
                     </div>
                 </div>
@@ -84,7 +84,15 @@
                 @endforeach
                 <div>
                     <a href="{{route('awardee')}}" class="awardee-item d-block position-relative">
-                        <img src="/src/images/awardee-more.png" alt="Awardee">
+                        <img src="/src/images/awardee-more.png" alt="Awardee" style="min-height:28em; min-width:15em; object-fit:cover">
+                        <div class="p-4 bg-blurr position-absolute bottom-0 right-0 w-100 left-0 opacity-0">
+                            <div class="d-flex align-items-center gap-3">
+                                <div>
+                                    <h5 class="text-yellow">a</h5>
+                                    <p class="fs-6 text-white">wk</p>
+                                </div>
+                            </div>
+                        </div>
                     </a>
                 </div>
             </div>

@@ -367,7 +367,7 @@ h1, h2, h3 {
   font-size: 120px;
   line-height: 70px;
   margin-left: -2em;
-  margin-top: 4em;
+  margin-top: 6em;
   z-index: 2;
   order: 1;
 }
@@ -398,6 +398,9 @@ h1, h2, h3 {
 .awardee .awardee-item > img {
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
+  height: 25em;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .awardee .awardee-item:hover img {
   filter: grayscale(0%);
@@ -434,6 +437,9 @@ h1, h2, h3 {
 }
 .heroes-page .hero-item img {
   filter: grayscale(100);
+  height: 30em;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .heroes-page .hero-item .hero-content {
   background: rgba(217, 217, 217, 0.1);

@@ -5,7 +5,7 @@
         </a>
         <div class="menu-list">
             <a href="{{route('about')}}" class="menu-item {{ request()->is('about') ? 'active' : ''}}">About</a>
-            <a href="{{route('heroes')}}" class="menu-item {{ request()->is('heroes*') ? 'active' : ''}}">Our Heroes</a>
+            <a href="{{route('heroes')}}" class="menu-item {{ request()->is('fellows*') ? 'active' : ''}}">Our Fellows</a>
             <a href="{{route('awardee')}}" class="menu-item {{ request()->is('awardee*') ? 'active' : ''}}">Awardee</a>
             <a href="{{route('home')}}#sosmed" class="menu-item">Social Media</a>
         </div>

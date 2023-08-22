@@ -24,8 +24,8 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/awardee', [AwardeeController::class, 'index'])->name('awardee');
 Route::get('/awardee/{slug}', [AwardeeController::class, 'show'])->name('awardee.item');
 
-Route::get('/heroes', [HeroController::class, 'index'])->name('heroes');
-Route::get('/heroes/{slug}', [HeroController::class, 'show'])->name('heroes.item');
+Route::get('/fellows', [HeroController::class, 'index'])->name('heroes');
+Route::get('/fellows/{slug}', [HeroController::class, 'show'])->name('heroes.item');
 
 Route::post('/contact', [PageController::class, 'contact'])->name('contact');
 

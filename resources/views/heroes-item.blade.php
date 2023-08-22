@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 my-5">
-                <p class="fw-bold bg-gold text-white p-3 px-4 d-inline-block rounded-pill">THE HERO</p>
+                <p class="fw-bold bg-gold text-white p-3 px-4 d-inline-block rounded-pill">THE FELLOWS</p>
                 <h1 class="text-semibig text-gold mb-0">{{$hero->name}}</h1>
                 @if (isset($hero->job) && isset($hero->instansi))
                 <h4 class="fs-4 fw-bold" style="margin-top: -3%;">
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6">
-                <img src="{{Voyager::image($hero->image)}}" alt="Heroes {{$hero->name}} image" class="d-block w-100">
+                <img src="{{Voyager::image($hero->image)}}" alt="Fellows {{$hero->name}} image" class="d-block w-100" style="max-height: 35em; object-fit:contain; object-position:center">
             </div>
             <div class="col-12 py-5 my-4">
                 <h2>The Awardee</h2>

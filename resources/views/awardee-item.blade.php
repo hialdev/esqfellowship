@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6">
-                <img src="{{Voyager::image($awardee->image)}}" alt="Awardee {{ $awardee->name }} Detail" class="d-block w-100">
+                <img src="{{Voyager::image($awardee->image)}}" alt="Awardee {{ $awardee->name }} Detail" class="d-block w-100" style="max-height: 35em; object-fit:contain; object-position:center">
             </div>
         </div>
     </div>

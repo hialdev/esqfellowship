@@ -6,7 +6,7 @@
             
 <section class="sec-pad">
     <div class="container">
-        <h1 class="text-semibig text-gold text-upppercase">What is The Fellowship</h1>
+        <h1 class="text-semibig light-text-gold text-upppercase">What is The Fellowship</h1>
         <div class="row align-items-center">
             <div data-aos="fade-right" data-aos-duration="1000" class="col-12 col-md-6">
                 <h4 class="text-blue">What is fellowship generasi emas ?</h4>

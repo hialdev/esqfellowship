@@ -10,35 +10,41 @@
             <h3 class="text-semibig text-upppercase">Contact Us</h3>
             <div class="rounded-4 bg-light overflow-hidden bg-secondary">
                 <div class="d-flex align-items-center gap-3 p-3 bg-gold">
-                    <img src="{{Voyager::image(setting('site.logo'))}}" alt="Admin Contact" class="rounded-circle" style="width: 4em; height: 4em; object-fit: cover;">
+                    <img src="{{Voyager::image(setting('popup.pp'))}}" alt="Admin Contact" class="rounded-circle" style="width: 4em; height: 4em; object-fit: cover;">
                     <div>
-                        <div class="fw-bold fs-5 text-white">Admin Fellowship</div>
+                        <div class="fw-bold fs-5 text-white">{{setting('popup.name')}}</div>
                         <p class="mb-0 text-white fst-italic fs-6">biasa membalas dalam < 1jam</p>
                     </div>
                 </div>
                 <div class="p-3 d-flex flex-column justify-content-end pt-5 mt-5" style="min-height: 20em;">
                     <div class="d-flex flex-column align-items-start gap-3">
+                        @php
+                            $text = setting('popup.chats');
+                            $textArray = explode("|", $text);
+                            // Filter teks yang memiliki lebih dari 3 huruf
+                            $filteredArray = array_filter($textArray, function($item) {
+                                return strlen(trim($item)) > 3;
+                            });
+                            // Menghapus spasi di awal dan akhir dari setiap elemen
+                            $chats = array_map('trim', $filteredArray);
+                        @endphp
+                        @foreach ($chats as $chat)
                         <div class="speech-bubble p-3 d-inline-block">
-                            <div>Hallo! selamat datang di admin fellowship :D</div>
+                            <div>{{$chat}}</div>
                         </div>
-                        <div class="speech-bubble p-3 d-inline-block">
-                            <div>Kamu mau tanya apa nih?</div>
-                        </div>
-                        <div class="speech-bubble p-3 d-inline-block">
-                            <div>jangan lupa isi datanya dengan benar yah.. terus tulis pesannya lalu kirim deh!</div>
-                        </div>
+                        @endforeach 
                         <form action="{{route('contact')}}" method="POST" class="d-flex flex-column w-100 align-items-start gap-3">
                             @csrf
                             <div class="speech-bubble p-3 d-inline-block">
-                                <div>Siapa nama lengkap kamu nih?</div>
+                                <div>{{setting('popup.fname')}}</div>
                                 <div><input name="name" type="text" placeholder="Nama Kamu" class="form-control w-100 my-2" required></div>
                             </div>
                             <div class="speech-bubble p-3 d-inline-block">
-                                <div>Alamat Email kamu apa?</div>
+                                <div>{{setting('popup.femail')}}</div>
                                 <div><input name="email" type="email" placeholder="" class="form-control w-100 my-2" required></div>
                             </div>
                             <div class="speech-bubble p-3 d-inline-block">
-                                <div>kalau No hp / whatsapp kamu ? tenang ini hanya untuk menghubungimu</div>
+                                <div>{{setting('popup.fno')}}</div>
                                 <div><input name="no" type="number" placeholder="" class="form-control w-100 my-2" required></div>
                             </div>
                             <div class="w-100 d-flex align-items-center rounded-4 p-3 gap-3 bg-gold">

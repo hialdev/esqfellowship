@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-12">
                 <p class="fw-bold">THE AWARDEE</p>
-                <h1 class="text-semibig text-gold">{{$awardee->name}}</h1>
+                <h1 class="text-semibig light-text-gold">{{$awardee->name}}</h1>
                 
             </div>
             <div class="col-12 col-md-6">

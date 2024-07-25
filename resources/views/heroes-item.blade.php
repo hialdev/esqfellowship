@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-12 my-5">
                 <p class="fw-bold bg-gold text-white p-3 px-4 d-inline-block rounded-pill">THE FELLOWS</p>
-                <h1 class="text-semibig text-gold mb-0">{{$hero->name}}</h1>
+                <h1 class="text-semibig light-text-gold mb-0">{{$hero->name}}</h1>
                 @if (isset($hero->job) && isset($hero->instansi))
                 <h4 class="fs-4 fw-bold" style="margin-top: -3%;">
                     {{$hero->job}} of {{$hero->instansi}}
@@ -30,7 +30,7 @@
                     @foreach ($hero->awardees as $award)
                     <div>
                         <a href="{{route('awardee.item',$award->slug)}}" class="d-block position-relative overflow-hidden" style="border-radius: 25px;">
-                            <img src="{{Voyager::image($award->image)}}" alt="Awardee {{$award->name}}" style="min-height: 26em; min-width:15em; object-fit:cover">
+                            <img src="{{Voyager::image($award->image)}}" alt="Awardee {{$award->name}}" style="aspect-ratio:2/3; object-fit:cover">
                             <div class="p-4 bg-blurr position-absolute bottom-0 right-0 w-100 left-0">
                                 <div class="d-flex align-items-center gap-3">
                                     <div>

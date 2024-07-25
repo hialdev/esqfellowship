@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\WebMail;
+use App\Models\Achievement;
 use App\Models\Awardee;
 use App\Models\Banner;
 use App\Models\Hero;
@@ -44,6 +45,19 @@ class PageController extends Controller
         return view('about', compact('seo'));
     }
 
+    public function achievement() {
+        $meta = Meta::all()->keyBy('page');
+        $seo = (object)[
+            'title' => $meta->get('achievement')->title ?? $meta->get('default')->title,
+            'desc' => $meta->get('achievement')->desc ?? $meta->get('default')->desc,
+            'image' => Voyager::image($meta->get('achievement')->image) ?? Voyager::image($meta->get('default')->image),
+            'keyword' => $meta->get('achievement')->keyword ?? $meta->get('default')->keyword,
+        ];
+        $achievements = Achievement::all();
+
+        return view('achievement', compact('seo', 'achievements'));
+    }
+
     public function contact(Request $req) {
         $validate = $req->validate([
             'name' => 'required|min:4|max:23',
@@ -62,7 +76,17 @@ class PageController extends Controller
             $txt = "Hi%20ESQ%20Fellowship%21%21%20saya%20".$req->get('name')."%20-%20dengan%20email%20".$req->get('email').".com%20dan%20no%20telp%20".$req->get('no')."%0A%0A".$req->get('messages');
             return redirect()->away("https://wa.me/$wa?text=$txt");
         }
+    }
 
+    public function regist() {
+        $meta = Meta::all()->keyBy('page');
+        $seo = (object)[
+            'title' => $meta->get('regist')->title ?? $meta->get('default')->title,
+            'desc' => $meta->get('regist')->desc ?? $meta->get('default')->desc,
+            'image' => Voyager::image($meta->get('regist')->image) ?? Voyager::image($meta->get('default')->image),
+            'keyword' => $meta->get('regist')->keyword ?? $meta->get('default')->keyword,
+        ];
 
+        return view('regist', compact('seo'));
     }
 }

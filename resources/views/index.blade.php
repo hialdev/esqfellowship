@@ -11,16 +11,16 @@
             @endforeach
         </div>
         <div class="position-absolute top-0 right-0 left-0 w-100" style="height:90vh; z-index: 10;">
-            <div class="d-flex flex-column align-items-center justify-content-center h-100 text-center" style="background: linear-gradient(180deg, rgba(17, 24, 33, 0) 3.19%, #111821 82.37%);">
+            <div class="d-flex flex-column align-items-center justify-content-center h-100 text-center" style="background: linear-gradient(180deg, rgba(17, 24, 33, 0) 3.19%, #081464 82.37%);">
                 <div style="max-width: 50em;">
-                    <h1 data-aos="zoom-in-down" data-aos-duration="1000" class="text-gold text-big text-wrap pb-5">Fellowship Program</h1>
-                    <p data-aos="fade-up" data-aos-duration="3000" class="fs-3">ESQ Business School</p>
+                    <h1 data-aos="zoom-in-down" data-aos-duration="1000" class="text-gold text-big text-wrap pb-5 pt-5">{{ setting('content.home_hero_title') }}</h1>
+                    <p data-aos="fade-up" data-aos-duration="3000" class="fs-3">{{ setting('content.home_hero_subtitle') }}</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="what-is sec-pad">
+    <section class="what-is sec-pad" style="background: linear-gradient(180deg, #081464 52.37%, rgba(17, 24, 33, 0) 100%);">
         <div class="container">
             <div class="row align-items-center">
                 <div data-aos="fade-right" data-aos-duration="1000" class="col-12 col-md-6 mb-4 pe-5">
@@ -35,7 +35,7 @@
         </div>
     </section>
 
-    <section class="our-hero sec-pad">
+    <section class="our-hero sec-pad" style="background: linear-gradient(180deg, rgba(17, 24, 33, 0) 52.37%, #081464 100%);">
         <div class="container">
             <h2 class="text-gold text-semibig d-inline-block">Our Fellows</h2>
             <div class="row">
@@ -43,7 +43,7 @@
                 <div data-aos="zoom-out-up" data-aos-duration="1000" class="col-10 mx-auto hero-card">
                     <a href="{{route('heroes.item',$hero->slug)}}" class="text-decoration-none text-white hero-item">
                         <h3 class="text-white fs-1 text-wrap lc lc-2">{{$hero->name}}</h3>
-                        <img src="{{Voyager::image($hero->image)}}" alt="Fellows {{$hero->name}}" class="rounded-4 border border-2 border-warning" style="min-height: 18em; min-width:18em; object-fit:cover">
+                        <img src="{{Voyager::image($hero->image)}}" alt="Fellows {{$hero->name}}" class="rounded-4 border border-2 border-warning" style="aspect-ratio:2/3; object-fit:cover">
                     </a>
                 </div>
                 @endforeach
@@ -62,7 +62,7 @@
         </div>
     </section>
 
-    <section class="awardee sec-pad">
+    <section class="awardee sec-pad" style="background: linear-gradient(180deg, #081464 52.37%, rgba(17, 24, 33, 0) 100%);">
         <div class="container">
             <h2 class="text-gold text-semibig d-inline-block">Awardee</h2>
             <div class="owl-carousel awardee-carousel owl-theme">
@@ -70,7 +70,7 @@
                 @foreach ($awardee as $award)
                 <div>
                     <a href="{{route('awardee.item',$award->slug)}}" class="awardee-item d-block position-relative">
-                        <img src="{{Voyager::image($award->image)}}" alt="Awardee {{$award->name}}" style="min-height:28em; min-width:15em; object-fit:cover">
+                        <img src="{{Voyager::image($award->image)}}" alt="Awardee {{$award->name}}" style="aspect-ratio:2/3; object-fit:cover">
                         <div class="p-4 bg-blurr position-absolute bottom-0 right-0 w-100 left-0">
                             <div class="d-flex align-items-center gap-3">
                                 <div>
@@ -118,7 +118,7 @@
         </div>
     </section>
 
-    <section class="sosmed my-5 sec-pad" id="sosmed">
+    <section class="sosmed py-5 sec-pad" id="sosmed" style="background: linear-gradient(180deg, rgba(17, 24, 33, 0) 52.37%, #081464 100%);">
         <h2 class="text-center text-gold text-semibig">Social Media</h2>
         
         <div class="container position-relative">

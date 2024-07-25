@@ -9,7 +9,7 @@ use TCG\Voyager\Facades\Voyager;
 
 class HeroController extends Controller
 {
-    public function index() {
+    public function year($year) {
         $meta = Meta::all()->keyBy('page');
         $seo = (object)[
             'title' => $meta->get('heroes')->title ?? $meta->get('default')->title,
@@ -18,21 +18,40 @@ class HeroController extends Controller
             'keyword' => $meta->get('heroes')->keyword ?? $meta->get('default')->keyword,
         ];
 
-        $heroes = Hero::latest()->get();
+        $heroes = Hero::where('year', $year)->latest()->get();
 
-        return view('heroes', compact('heroes','seo'));
+        return view('heroes-year', compact('heroes','seo', 'year'));
     }
 
     public function show($slug) {
         $hero = Hero::where('slug',$slug)->first();
         $meta = Meta::all()->keyBy('page');
         $seo = (object)[
-            'title' => 'The Hero - '.$hero->name ?? $meta->get('default')->title,
+            'title' => 'The Fellow - '.$hero->name ?? $meta->get('default')->title,
             'desc' => $meta->get('heroes')->desc ?? $meta->get('default')->desc,
             'image' => Voyager::image($hero->image) ?? Voyager::image($meta->get('default')->image),
             'keyword' => $meta->get('heroes')->keyword.",$hero->name ,$hero->instansi" ?? $meta->get('default')->keyword.",$hero->name ,$hero->instansi",
         ];
 
         return view('heroes-item', compact('hero','seo'));
+    }
+
+    public function index() {
+        $heroes = Hero::orderBy('year')->get();
+        $heroesByYear = $heroes->groupBy('year')->map(function ($group) {
+            return [
+                'first_four' => $group->take(4),
+                'remaining_count' => $group->count() > 4 ? $group->count() - 4 : 0
+            ];
+        });
+        $meta = Meta::all()->keyBy('page');
+        $seo = (object)[
+            'title' => $meta->get('heroes')->title ?? $meta->get('default')->title,
+            'desc' => $meta->get('heroes')->desc ?? $meta->get('default')->desc,
+            'image' => Voyager::image($meta->get('heroes')->image) ?? Voyager::image($meta->get('default')->image),
+            'keyword' => $meta->get('heroes')->keyword ?? $meta->get('default')->keyword,
+        ];
+
+        return view('heroes', compact('heroesByYear','seo'));
     }
 }

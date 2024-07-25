@@ -1,4 +1,4 @@
-<footer class="py-5 position-relative" style="background-color: #001E40; color:white">
+<footer class="py-5 position-relative" style="background-color: #081464; color:white">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-4 mb-5">
@@ -29,7 +29,7 @@
             </div>
             <div class="col-12 col-md-4 mb-5 order-first order-md-0">
                 <div class="h-100 d-flex justify-content-center align-items-center">
-                    <img src="{{Voyager::image(setting('site.logo'))}}" alt="Logo Footer" style="width: 10em;">
+                    <img src="{{Voyager::image(setting('site.logo_footer'))}}" alt="Logo Footer" style="width: 10em;filter:brightness(100)">
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-5 text-end">

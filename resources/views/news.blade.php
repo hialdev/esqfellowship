@@ -25,7 +25,7 @@
             @foreach ($news as $new)
             <div class="col-6 col-md-4 col-lg-3">
                 <a href="{{route('news.show', $new->slug)}}" class="d-block hover-scale p-2 mb-4 rounded bg-white text-decoration-none text-dark">
-                    <img src="https://placehold.co/720x480" alt="Image News" class="d-block rounded w-100" style="aspect-ratio:16/9;object-fit: cover">
+                    <img src="{{Voyager::image($new->image)}}" alt="Image News" class="d-block rounded w-100" style="aspect-ratio:16/9;object-fit: cover">
                     <div class="p-3 px-2">
                         <div class="text-secondary mb-2">{{\Carbon\Carbon::parse($new->created_at)->timezone('Asia/Jakarta')->format('d M Y H:i')}} WIB</div>
                         <h6>{{$new->title}}</h6>

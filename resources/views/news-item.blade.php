@@ -14,7 +14,7 @@
                     {{\Carbon\Carbon::parse($news->created_at)->timezone('Asia/Jakarta')->format('d M Y H:i')}} WIB
                 </div>
                 <h1 class="normal">{{$news->title}}</h1>
-                <img src="https://placehold.co/1200x700" alt="" class="d-block w-100 mb-5" style="border-radius: 25px; aspect-ratio:16/9; object-fit:cover">
+                <img src="{{Voyager::image($news->imaeg)}}" alt="{{$news->title}} Image" class="d-block w-100 mb-5" style="border-radius: 25px; aspect-ratio:16/9; object-fit:cover">
                 <div class="content-box">
                     {!! $news->content !!}
                 </div>
@@ -23,7 +23,7 @@
                 <h2 class="normal mb-4">Baca Juga</h2>
                 @foreach ($newsLists as $nl)
                 <a href="{{route('news.show', $nl->slug)}}" class="d-flex gap-3 text-dark p-4 rounded bg-light fs-6 mb-3">
-                    <img src="https://placehold.co/900x480" alt="Image {{$nl->title}}" class="d-block rounded" style="aspect-ratio:16/9; max-height:5em; object-fit:cover;">
+                    <img src="{{Voyager::imaeg($nl->title)}}" alt="Image {{$nl->title}}" class="d-block rounded" style="aspect-ratio:16/9; max-height:5em; object-fit:cover;">
                     <div class="fs-6">{{$nl->title}}</div>
                 </a>
                 @endforeach

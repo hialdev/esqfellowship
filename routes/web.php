@@ -31,6 +31,9 @@ Route::get('/fellows/{year}', [HeroController::class, 'year'])->name('heroes.yea
 Route::get('/fellows/s/{slug}', [HeroController::class, 'show'])->name('heroes.item');
 
 Route::get('/achievement', [PageController::class, 'achievement'])->name('achievement');
+Route::get('/achievement/search', [PageController::class, 'achievementSearch'])->name('achievement.search');
+Route::get('/achievement/{year}', [PageController::class, 'achievementYear'])->name('achievement.year');
+
 Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/news/{slug}', [NewsController::class, 'show'])->name('news.show');
 

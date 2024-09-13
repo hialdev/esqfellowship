@@ -53,9 +53,41 @@ class PageController extends Controller
             'image' => Voyager::image($meta->get('achievement')->image) ?? Voyager::image($meta->get('default')->image),
             'keyword' => $meta->get('achievement')->keyword ?? $meta->get('default')->keyword,
         ];
-        $achievements = Achievement::all();
+        $achievements = Achievement::orderBy('year')->get();
+        $achievementsByYear = $achievements->groupBy('year')->map(function ($group) {
+            return [
+                'first_four' => $group->take(4),
+                'remaining_count' => $group->count() > 4 ? $group->count() - 4 : 0
+            ];
+        });
 
-        return view('achievement', compact('seo', 'achievements'));
+        return view('achievement', compact('seo', 'achievementsByYear'));
+    }
+
+    public function achievementYear($year) {
+        $meta = Meta::all()->keyBy('page');
+        $seo = (object)[
+            'title' => $meta->get('achievement')->title ?? $meta->get('default')->title,
+            'desc' => $meta->get('achievement')->desc ?? $meta->get('default')->desc,
+            'image' => Voyager::image($meta->get('achievement')->image) ?? Voyager::image($meta->get('default')->image),
+            'keyword' => $meta->get('achievement')->keyword ?? $meta->get('default')->keyword,
+        ];
+        $achievements = Achievement::where('year', $year)->latest()->get();
+
+        return view('achievement-year', compact('seo', 'achievements', 'year'));
+    }
+
+    public function achievementSearch(Request $request) {
+        $q = $request->get('q', '');
+        $meta = Meta::all()->keyBy('page');
+        $seo = (object)[
+            'title' => $meta->get('achievement')->title ?? $meta->get('default')->title,
+            'desc' => $meta->get('achievement')->desc ?? $meta->get('default')->desc,
+            'image' => Voyager::image($meta->get('achievement')->image) ?? Voyager::image($meta->get('default')->image),
+            'keyword' => $meta->get('achievement')->keyword ?? $meta->get('default')->keyword,
+        ];
+        $achievements = Achievement::where('name', 'LIKE', '%'.$q.'%')->latest()->get();
+        return view('achievement-search', compact('seo', 'achievements', 'q'));
     }
 
     public function contact(Request $req) {

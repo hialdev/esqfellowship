@@ -19,7 +19,23 @@
 <section class="sec-pad bg-light">
     <div class="container">
         <div class="row">
-            @foreach ($achievements as $achievement)
+            <div class="col-12">
+                <form action="{{route('achievement.search')}}" method="GET">
+                    <div class="d-flex align-items-center justify-content-center gap-3 mb-3">
+                        <input type="text" class="form-control border-white p-2 px-4 rounded-pill" name="q" placeholder="Cari dengan Nama Mahasiswa" minlength="3">
+                        <button type="submit" class="btn p-2 px-3 rounded-pill bg-gold text-white hover-scale">Cari</button>
+                    </div>
+                </form>
+            </div>
+        @foreach ($achievementsByYear as $year => $achievements)
+            <div class="col-12">
+                <a href="{{route('achievement.year',$year)}}" class="d-flex align-items-center mb-3 gap-5 text-decoration-none text-dark">
+                    <h2 class="text-semibig text-gold mb-0 p-0">{{$year}}</h2>
+                    <div class="btn rounded-pill bg-gold text-white hover-scale">Lihat semua Achievement {{$year}}</div>
+                </a>
+            </div>
+
+            @foreach ($achievements['first_four'] as $achievement)
             <div class="col-12">
                 <div class="d-flex flex-column flex-md-row gap-3 bg-white p-4 px-3 mb-3" style="border-radius: 25px">
                     <div class="m-0 ms-md-n3">
@@ -28,16 +44,13 @@
                     <div class="p-4">
                         <h3>{{$achievement->name}}</h3>
                         <div class="d-flex flex-column flex-md-row align-items-start gap-3">
-                            @if (strlen($achievement->academic) > 0)
+                            @if (strlen($achievement->achievement) > 0)
                                 <div>
-                                    <h6>Akademik</h6>
-                                    {!! $achievement->academic !!}
+                                    {!! $achievement->achievement !!}
                                 </div>
-                            @endif
-                            @if (strlen($achievement->non_academic) > 0)
+                            @else
                                 <div>
-                                    <h6>Non Akademik</h6>
-                                    {!! $achievement->non_academic !!}
+                                    <div class="text-secondary">Achievement sedang dalam proses input</div>
                                 </div>
                             @endif
                         </div>
@@ -45,7 +58,11 @@
                 </div>
             </div>
             @endforeach
+            @if ($achievements['remaining_count'] > 0)
+            <div class="fs-5 text-secondary">dan {{$achievements['remaining_count']}} Achievement lainnya</div>
+            @endif
         </div>
+        @endforeach
     </div>
 </section>
 @endsection

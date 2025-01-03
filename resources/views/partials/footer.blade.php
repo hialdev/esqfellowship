@@ -4,21 +4,21 @@
             <div class="col-12 col-md-4 mb-5">
                 <h4 class="mb-2">Get in Touch</h4>
                 <ul data-aos="fade-down" data-aos-duration="1000" class="list-unstyled">
-                    <li><a href="https://wa.me/{{setting('contact.wa')}}" class="d-flex py-3 align-items-center gap-3 text-decoration-none text-white">
+                    <li><a href="https://wa.me/{{setting('contact.wa')}}" class="d-flex pt-3 align-items-center gap-3 text-decoration-none text-white">
                             <div class="d-flex align-items-center justify-content-center">
                                 <span class="iconify" data-icon="fontisto:whatsapp"></span>
                             </div>
                             <p class="p-0 m-0">{{setting('contact.wa')}} - ({{setting('contact.wa_name')}})</p>
                         </a>
                     </li>
-                    <li><a href="tel:{{setting('contact.telp')}}" class="d-flex py-3 align-items-center gap-3 text-decoration-none text-white">
+                    <li><a href="tel:{{setting('contact.telp')}}" class="d-flex pt-3 align-items-center gap-3 text-decoration-none text-white">
                             <div class="d-flex align-items-center justify-content-center">
                                 <span class="iconify" data-icon="teenyicons:phone-solid"></span>
                             </div>
                             <p class="p-0 m-0">{{setting('contact.telp')}} - ({{setting('contact.telp_name')}})</p>
                         </a>
                     </li>
-                    <li><a href="mailto:{{setting('contact.mail')}}" class="d-flex py-3 align-items-center gap-3 text-decoration-none text-white">
+                    <li><a href="mailto:{{setting('contact.mail')}}" class="d-flex pt-3 align-items-center gap-3 text-decoration-none text-white">
                             <div class="d-flex align-items-center justify-content-center">
                                 <span class="iconify" data-icon="octicon:mail-16"></span>
                             </div>
@@ -34,7 +34,7 @@
             </div>
             <div class="col-12 col-md-4 mb-5 text-end">
                 <h4 class="mb-2">Lets Meet</h4>
-                <p data-aos="fade-down" data-aos-duration="1000" style="line-height: 52px;">{{setting('contact.address')}}</p>
+                <p data-aos="fade-down" data-aos-duration="1000" style="line-height: 32px;">{{setting('contact.address')}}</p>
             </div>
             <div class="col-12 pt-5 pb-2">
                 <p>&copy; {{setting('site.footer')}}</p>

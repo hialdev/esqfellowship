@@ -61,8 +61,8 @@
             @if ($achievements['remaining_count'] > 0)
             <div class="fs-5 text-secondary">dan {{$achievements['remaining_count']}} Achievement lainnya</div>
             @endif
-        </div>
         @endforeach
+        </div>
     </div>
 </section>
 @endsection

@@ -28,7 +28,7 @@
                 </form>
             </div>
         @foreach ($achievementsByYear as $year => $achievements)
-            <div class="col-12">
+            <div class="col-12 mt-4">
                 <a href="{{route('achievement.year',$year)}}" class="d-flex align-items-center mb-3 gap-5 text-decoration-none text-dark">
                     <h2 class="text-semibig text-gold mb-0 p-0">{{$year}}</h2>
                     <div class="btn rounded-pill bg-gold text-white hover-scale">Lihat semua Achievement {{$year}}</div>

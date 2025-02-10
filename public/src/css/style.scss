@@ -129,6 +129,13 @@ h1,h2,h3{
     h1,h2,h3{
         font-family: 'Poppins', sans-serif !important;
     }
+
+    img{
+        width: 100% !important;
+        border-radius: 20px !important;
+        margin: 0.6em 0px;
+        height:auto !important;
+    }
 }
 .text-big{
     font-weight: 400;

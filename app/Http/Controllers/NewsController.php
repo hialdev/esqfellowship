@@ -11,7 +11,8 @@ use TCG\Voyager\Facades\Voyager;
 class NewsController extends Controller
 {
     public function index(){
-        $news = News::paginate(10);
+        $q = request()->get('q');
+        $news = News::where('title', 'LIKE', '%'.$q.'%')->paginate(30);
         $meta = Meta::all()->keyBy('page');
         $seo = (object)[
             'title' => $meta->get('news')->title ?? $meta->get('default')->title,
